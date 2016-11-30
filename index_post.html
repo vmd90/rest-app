@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>REST POST app</title>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
+    <style>
+        label {
+            margin: 10px;
+        }
+        input, textarea {
+            margin: 5px;
+        }
+    </style>
+</head>
+<body>
+    <h2>REST POST app</h2><hr>
+    <form id="sendForm" method="POST">
+        <label>ID: <input name="id" type="text" value="2020201"></label><br>
+        <label>Title: <input name="title" type="text" value="Vaga para domestica"></label><br>
+        <label>Description:<br><textarea rows="5" cols="50">Casal sem filhos e sem animais domesticos procura empregada domestica para cuidar de um apartamento duplex. Limpar, cozinhar, lavar e passar roupas. Inicio a partir de 20 de julho</textarea></label><br><br>
+        <label>Neighborhood: <input name="neighborhood" type="text" value="Ipanema"></label><br>
+        <label>Address: <input name="address" type="text" value="Pedro"></label><br>
+        <label>Address type: <input name="address_type" type="text" value="Rua"></label><br>
+        <label>City: <input name="city" type="text" value="Rio de Janeiro"></label><br>
+        <label>State: <input name="state" type="text" value="RJ"></label><br>
+        <label>Frequency: <input name="frequency" type="text" value="2x mes"></label><br>
+        <label>Category name: <input name="category_name" type="text" value="Empregada domestica"></label><br>
+        <label>Salary: <input name="salary" type="text" value="1300"></label><br>
+
+        <button>Send</button>
+    </form>
+
+    <script src="rest_post.js"></script>
+</body>
+</html>
