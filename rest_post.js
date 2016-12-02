@@ -1,17 +1,16 @@
 
 $("button").click(function(event) {
-    //event.preventDefault();
+    event.preventDefault();
     
-    var url = "http://ec2-35-164-139-210.us-west-2.compute.amazonaws.com/opportunities";
     var fields = {
-        "id": $("input[name='id']").val(),
+        "id": parseInt($("input[name='id']").val()),
         "title": $("input[name='title']").val(),
         "description": $("textarea").val(),
         "created_at": new Date().toLocaleString(),
         "is_contact_available":true,
         "is_active":true,
         "hirer":{
-            "id": "202020",
+            "id": 202020,
             "name":"Victor Municelli Dario",
             "account_type":"pf",
             "cnpj":null,
@@ -39,7 +38,7 @@ $("button").click(function(event) {
             "id":1,
             "name": $("input[name='category_name']").val()
         },
-        "salary_requirements": $("input[name='salary']").val(),
+        "salary_requirements": parseInt($("input[name='salary']").val()),
         "characteristics":[
 
         ],
@@ -53,7 +52,23 @@ $("button").click(function(event) {
 
     console.log(fields);
 
-    $.post(url, fields).done(function(data) {
-        alert(data);
+    $.ajax({
+        url: "http://ec2-35-164-223-211.us-west-2.compute.amazonaws.com/opportunities", 
+        data: fields,
+        method: "POST",
+        dataType: 'json',
+        crossDomain: true,
+        headers: {
+            "content-type": "application/json",
+            "cache-control": "no-cache"
+        },
+
+        success: function(data) {
+            alert("Done");
+        },
+        error: function (rs) {
+            console.log(rs);
+            alert("Error");
+        }
     });
 });
