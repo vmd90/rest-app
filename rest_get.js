@@ -3,7 +3,7 @@
 function search()
 {
 	var id = $('#id-input').val();
-	var aurl = 'http://ec2-35-164-139-210.us-west-2.compute.amazonaws.com/hirers/'+id+'/opportunities';
+	var aurl = 'http://ec2-35-164-223-211.us-west-2.compute.amazonaws.com/hirers/'+id+'/opportunities';
 	//console.log(aurl);
 	$.ajax({
 		url: aurl,
