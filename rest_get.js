@@ -19,6 +19,11 @@ function search()
 	});
 }
 
-$('button').click(function() {
+$('#search-button').click(function() {
 	search();
+});
+$('#opportunities-button').click(function() {
+	var id = $('#id-input').val();
+	console.log(window.location.hostname);
+	window.location = "./opportunities.html?id="+id;
 });
